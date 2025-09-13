@@ -9,69 +9,69 @@ Steps in the Project
 
 Step 1: Data Loading and Preprocessing
 
-Loaded financial transaction dataset.
+  Loaded financial transaction dataset.
 
-Standardized/normalized features for neural network training.
+  Standardized/normalized features for neural network training.
 
-Split dataset into train/test sets ensuring fraud class distribution is preserved.
+  Split dataset into train/test sets ensuring fraud class distribution is preserved.
 
 Step 2: Train Autoencoder Model
 
-Built and trained a deep autoencoder on the majority (non-fraud) transactions.
+  Built and trained a deep autoencoder on the majority (non-fraud) transactions.
 
-Used MSE reconstruction error as the anomaly score.
+  Used MSE reconstruction error as the anomaly score.
 
 Step 3: Evaluate Autoencoder Reconstruction Errors
 
-Computed reconstruction error for each transaction.
+  Computed reconstruction error for each transaction.
 
-Analyzed error distribution between fraud and non-fraud classes.
+  Analyzed error distribution between fraud and non-fraud classes.
 
-Applied threshold-based detection using Precision-Recall Curve and ROC Curve.
+  Applied threshold-based detection using Precision-Recall Curve and ROC Curve.
 
 Step 4: Threshold Selection (PR Curve & ROC Curve)
 
-Identified optimal thresholds using:
+  Identified optimal thresholds using:
 
-Youden’s J statistic (from ROC).
+  Youden’s J statistic (from ROC).
 
-Best trade-off point (from PR Curve).
+  Best trade-off point (from PR Curve).
 
-Generated predictions:
+ Generated predictions:
 
-Transactions with error ≥ threshold → Fraud (1).
+  Transactions with error ≥ threshold → Fraud (1).
 
-Transactions with error < threshold → Normal (0).
+  Transactions with error < threshold → Normal (0).
 
 Step 5: Run Clustering (OPTICS) on Reconstruction Errors
 
-Applied OPTICS clustering on reconstruction errors.
+  Applied OPTICS clustering on reconstruction errors.
 
-Grouped transactions into normal vs anomalous clusters.
+  Grouped transactions into normal vs anomalous clusters.
 
-Obtained anomaly predictions independent of Autoencoder.
+  Obtained anomaly predictions independent of Autoencoder.
 
 Step 6: Hybrid Decision Rule
 
 Combined predictions from Autoencoder + OPTICS:
 
-If Autoencoder predicts fraud OR OPTICS flags anomaly above cutoff percentile, label as fraud.
+  If Autoencoder predicts fraud OR OPTICS flags anomaly above cutoff percentile, label as fraud.
 
-Evaluated performance across multiple cutoff percentiles (95th, 97th, 98th, 99th, 99.5th).
+  Evaluated performance across multiple cutoff percentiles (95th, 97th, 98th, 99th, 99.5th).
 
-Final hybrid model achieved the highest recall for fraud detection.
+  Final hybrid model achieved the highest recall for fraud detection.
 
 Step 7: Model Comparison
 
-Compared three approaches:
+  Compared three approaches:
 
-Autoencoder-only
+  Autoencoder-only
 
-OPTICS-only
+  OPTICS-only
 
-Hybrid Model
+  Hybrid Model
 
-Reported metrics: Precision, Recall, F1-score, Confusion Matrix
+  Reported metrics: Precision, Recall, F1-score, Confusion Matrix
 
 ✅ Conclusion
 
