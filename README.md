@@ -7,7 +7,7 @@ The hybrid approach is designed to maximize the detection of fraudulent transact
 
 Steps in the Project
 
-Step 1: Data Loading and Preprocessing
+**Step 1: Data Loading and Preprocessing**
 
   Loaded financial transaction dataset.
 
@@ -15,13 +15,13 @@ Step 1: Data Loading and Preprocessing
 
   Split dataset into train/test sets ensuring fraud class distribution is preserved.
 
-Step 2: Train Autoencoder Model
+**Step 2: Train Autoencoder Model**
 
   Built and trained a deep autoencoder on the majority (non-fraud) transactions.
 
   Used MSE reconstruction error as the anomaly score.
 
-Step 3: Evaluate Autoencoder Reconstruction Errors
+**Step 3: Evaluate Autoencoder Reconstruction Errors**
 
   Computed reconstruction error for each transaction.
 
